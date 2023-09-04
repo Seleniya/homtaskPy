@@ -161,7 +161,7 @@ for x in range (P):
 '''
 Требуется вывести все целые степени двойки (т.е. числа вида 2 в степени k), не превосходящие числа N.
 '''
-
+'''
 N = int(input('Назовите число, а я напишу все степени числа 2, которые попадают в диапазон от 0 до этого числа: '))
 
 
@@ -171,5 +171,235 @@ while N >= 2**i:
     print(2**(i-1), end='  ')
 
 
-               
+'''   
+'''          
+my_set = set('Hhhhello') #сделаем множество, без повторов
+print(len(my_set))#посчитаем длину списка
+'''
+'''
+str1 = [1, 2, 3, 5, 0, 1, 0]
+counter = 0
+for i in range(len(str1)):   #
+    if str1[i] not in str1[:i]: # если этот i в  этой строке до i отсутствует, тогда счётчик увеличим
+        counter += 1
+print(counter)
+'''
+# list = [1, 2, 3, 4, 5, 6]
+# k = 1
 
+
+# for i in range (k):
+#     last = list.pop()
+#     list.insert(0, last)
+# print(list)
+
+
+# или
+# list = [1, 2, 3, 4, 5, 6]
+# k = 1
+# k = k % len(list)
+# print ((list[-k : ]) + (list[: -k] ))
+
+
+
+# list = [ {'V': 'S001'},
+#     {'B': 'kjio'},
+#     {'df': 'sd'},
+#     {'er' : 'er'},
+#     {'we' : 'er'},
+#     {'cv' : 'dc'}]
+
+# my_list = []
+   
+# for dict in list:
+#     for val in dict.values():
+#         # print(val)
+
+#         my_list.append(val)
+# print(set(my_list))
+
+
+# for key in dict:
+#     print(key)
+
+# for key in dict.keys():
+#     print(dict[key])
+
+# for (k, v) in dict.items():
+#     print(k, v)
+
+
+# for item in dict:
+#     print('{} : {}'.format(item, dict[item]))
+
+# for val in dict.values():
+#     print(val)
+
+
+# list_1 = [1, 2, 3, 4, 2, 1, 2, 0, 2]
+# k = 2
+
+
+# print(list_1.count(k))
+
+
+
+
+
+# a=[1, 2, 9, 10, 0, 3]
+# x= 4
+# b=[abs(a[i]-x) for i in range(len(a))]
+# print(a[b.index(min(b))])
+
+# a=[1, 2, 9, 10, 0, 3]
+# b= 3
+# c=[]  # 2 1 6 7 3 0
+# for i in a:
+#     c.append(abs(b-i))
+# d = c.index(min(c))
+# print(a[d])
+# list_1=[1, 2, 9, 10, 0, 3]
+# k= 11
+# b=[abs(list_1[i]-k) for i in range(len(list_1))]
+# print(list_1[b.index(min(b))])
+
+
+# dict = {1 : 'N', 1 : 'O', 1 : 'U', 1 : 'T',  3 : 'B', 5 :'K' }
+
+
+# dict = {1:'AEIOULNSTR',
+#       	2:'DG',
+#       	3:'BCMP',
+#       	4:'FHVWY',
+#       	5:'K',
+#       	8:'JZ',
+#       	10:'QZ'}
+
+# word = 'DIFFERENT'
+#         #   214411111
+
+# print(sum([k for i in word for k, v in dict.items() if i in v]))
+	
+
+
+# list_letters = {1:"AEIOULNSTRАВЕИНОРСТ",
+#                 2:"DGДКЛМПУ",
+#                 3:"BCMPБГЁЬЯ",
+#                 4:"FHVWYЙЫ",
+#                 5:"KЖЗХЦЧ",
+#                 8:"JXШЭЮ",
+#                 10:"QZФЩЪ"}
+
+# word = input("Введите слово: ").upper()
+# summ = 0
+# for i in word:
+#     for k, v in list_letters.items():
+#         if i in v:
+#             summ += k
+# print(summ)
+
+
+# list_letters = {1:"AEIOULNSTRАВЕИНОРСТ",
+#                 2:"DGДКЛМПУ",
+#                 3:"BCMPБГЁЬЯ",
+#                 4:"FHVWYЙЫ",
+#                 5:"KЖЗХЦЧ",
+#                 8:"JXШЭЮ",
+#                 10:"QZФЩЪ"}
+# k = 'ноутбук' #1121322
+# word = k.upper()
+# sum = 0
+# for i in word:
+#     for m, v in list_letters.items():
+#         if i in v:
+#             sum += m
+# print(sum)
+
+
+
+# all_letters = 'a a b c d d a c l k '.split()
+
+# letters_count = {}
+# result_str = ''
+# for letter in all_letters:
+#     if letter not in letters_count:
+#         letters_count[letter] = 1
+#         result_str += f'{letter} '
+#     else:
+#         result_str += f'{letter}_{letters_count[letter]} '
+#         letters_count[letter] += 1
+
+# print(result_str)
+
+
+
+
+# points_en = {1: 'AEIOULNSTR', 2: 'DG', 3: 'BCMP', 4: 'FHVWY', 5: 'K', 8: 'JX', 10: 'QZ'}
+# points_ru = {1: 'АВЕИНОРСТ', 2: 'ДКЛМПУ', 3: 'БГЁЬЯ', 4: 'ЙЫ', 5: 'ЖЗХЦЧ', 8: 'ШЭЮ', 10: 'ФЩЪ'}
+
+# k = 'alla'
+# word = k.upper()  # переводим все буквы в верхний регистр
+# count = 0
+# for i in word:
+#     if i in 'QWERTYUIOPASDFGHJKLZXCVBNM':
+#         for j in points_en:
+#             if i in points_en[j]:
+#                 count = count + j
+#     else:
+#         for j in points_en:
+#             if i in points_ru[j]:
+#                 count = count + j
+# print(count)
+
+
+
+# print(len(set(input().split())))
+
+
+# max_el = 0
+
+# while (n := int(input())) != 0:
+#     if n > max_el:
+#         max_el = n
+# print(max_el)
+
+
+
+'''
+Задача 10: На столе лежат n монеток. Некоторые из них лежат вверх решкой, а некоторые – гербом. Определите минимальное число монеток, которые нужно перевернуть, чтобы все монетки
+были повернуты вверх одной и той же стороной. Выведите минимальное количество монет, которые нужно перевернуть
+n = int(input(f'Введите количество монет: '))
+'''
+'''
+v = int(input(f'Сколько из них лежат решкой? '))
+if v < n - v:
+    print(f'Нужно перевернуть {v} монет')
+else: print(f'Нужно перевернуть {n-v} монет')
+'''
+
+'''
+Задача 12: Петя и Катя – брат и сестра.
+Петя – студент, а Катя – школьница.
+Петя помогает Кате по математике.
+Он задумывает два натуральных числа X и Y (X,Y≤1000),
+ а Катя должна их отгадать. Для этого Петя делает две подсказки.
+ Он называет сумму этих чисел S и их произведение P. Помогите Кате отгадать задуманные Петей числа.
+ '''
+'''
+S  = int(input('Назовите сумму S  2х чисел: '))
+P = int(input('Назовите произведение P 2х чисел: '))
+for x in range (P): 
+    for y in range (P):
+        if (x + y == S) and (x * y == P):
+            print(x, y)
+'''
+'''
+Требуется вывести все целые степени двойки (т.е. числа вида 2 в степени k), не превосходящие числа N.
+'''
+# N = int(input('Назовите число, а я напишу все степени числа 2, которые попадают в диапазон от 0 до этого числа: '))
+
+
+# i = 0
+# while N >= 2**i:
+#     i += 1
+#     print(2**(i-1), end='  ')
