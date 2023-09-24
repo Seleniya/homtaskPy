@@ -1,3 +1,73 @@
+        
+# Задача 38: Дополнить телефонный справочник возможностью изменения и удаления данных.
+
+file_path = 'phone_book.txt'
+
+def add_contact(file_path):
+    surname = input('Введите фамилию: ')
+    name = input('Введите имя: ')
+    patronymic = input('Введите отчество: ')
+    phone = input('Введите номер телефона: ')
+
+
+    with open(file_path, 'a') as file:
+        file.write(f'{surname}, {name}, {patronymic}, {phone}n')
+    
+
+def display_contacts(file_path):
+    with open(file_path,  'r') as file:
+        for line in file:
+            print(line.strip())
+
+
+def search_contact(file_path):
+    search_query = input('Введите имя, фамилию или отчество для поиска: ')
+
+    with open(file_path, 'r') as file:
+        for line in file:
+            if search_query.lower() in line.lower:
+                print(line.strip())
+
+
+def change_contact(file_path):
+    surname = input('Введите фамилию записи, которую нужно изменить: ')
+    name = input('Введите имя записи, которую нужно изменить')
+
+    new_surname = input('Введите новую фамилию: ')
+    new_name = input('Введите новое имя: ')
+    new_patronymic = input('Введите новое отчество: ')
+    new_phone = input('Введите новый телефон: ')
+
+    with open(file_path, 'r+') as file:
+        lines = file.readlines()
+        file.seek(0)
+        for line in lines:
+            if surname.lower()  in line.lower() and name.lower() in line.lower():
+                file.write(f'{new_surname}, {new_name}, {new_patronymic}, {new_phone}n')
+            else:
+                file.write(line)
+        file.truncate()
+
+def delete_contact(file_path):
+    surname = input('Введите фамилию записи, которую нужно удалить: ')
+    name = input('Введите имя записи, которую нужно удалить: ')
+
+    with open(file_path, 'r+') as file:
+        lines = file.readlines()
+        file.seek(0)
+        for line in lines:
+            if surname.lower() not in line.lower() or name.lower() not in line.lower():
+                file.write(line)
+        file.truncate()
+
+
+add_contact(file_path)
+display_contacts(file_path)
+search_contact(file_path)
+change_contact(file_path)
+delete_contact(file_path)
+
+
 # Задача 34:  Винни-Пух попросил Вас посмотреть,
 # есть ли в его стихах ритм. Поскольку разобраться в его кричалках не настолько просто, насколько легко он их придумывает,
 # Вам стоит написать программу. Винни-Пух считает, что ритм есть, если число слогов (т.е. число гласных букв)
@@ -36,15 +106,15 @@
 # как, например, у операции умножения.
 
 
-def print_operation_table(operation, num_rows, num_columns):
-  for i in range(1, num_rows+1):
-    for j in range(1, num_rows+1):
-      result = operation(i, j)
-      print(operation(i, j), end='\t')
-    print()
+# def print_operation_table(operation, num_rows, num_columns):
+#   for i in range(1, num_rows+1):
+#     for j in range(1, num_rows+1):
+#       result = operation(i, j)
+#       print(operation(i, j), end='\t')
+#     print()
       
 
-print(print_operation_table(lambda i, j: i * j, 6, 6))
+# print(print_operation_table(lambda i, j: i * j, 6, 6))
 
 
 
